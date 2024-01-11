@@ -1,4 +1,4 @@
-package pa.tello.rafael.smud2024.ui.theme
+package pa.tello.rafael.smud2024.presentation.ui
 
 import android.app.Activity
 import android.os.Build
