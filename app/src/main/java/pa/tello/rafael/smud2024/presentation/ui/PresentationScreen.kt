@@ -51,13 +51,13 @@ fun PresentationScreen() {
         ) {
             repeat(pagerState.pageCount) { iteration ->
                 val color =
-                    if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray
+                    if (pagerState.currentPage == iteration) darkPink else lightPink
                 Box(
                     modifier = Modifier
                         .padding(2.dp)
                         .clip(CircleShape)
                         .background(color)
-                        .size(16.dp)
+                        .size(8.dp)
                 )
             }
         }

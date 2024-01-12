@@ -20,8 +20,8 @@ object PresentationContent {
                             title = "SMUD 2024",
                             subtitle = "The future of SMUD",
                             description = "SMUD 2024 is a project that aims to create a new SMUD app for the year 2024",
-                            image = R.drawable.smud_2023,
-                            imageDescription = "SMUD logo 2023",
+                            image = R.drawable.smud_logo_man,
+                            imageDescription = "man raising a hand with the SMUD logo",
                             pageNr = 0
                         )
                     )
