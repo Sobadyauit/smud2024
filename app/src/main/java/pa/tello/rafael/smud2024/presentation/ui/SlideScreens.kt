@@ -44,7 +44,8 @@ fun TitleSlide(
         Spacer(modifier = Modifier.height(4.dp))
         Text(
             text = slideContent.subtitle ?: "",
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineMedium,
+            color = darkPink
         )
 
         Spacer(modifier = Modifier.height(16.dp))
