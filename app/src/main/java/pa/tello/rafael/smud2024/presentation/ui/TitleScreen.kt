@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,7 +16,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -25,105 +23,86 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import pa.tello.rafael.smud2024.R
-
 import pa.tello.rafael.smud2024.data.SlideContent
 
-
 @Composable
-fun ContentSlide(
-    slideContent: SlideContent,
-) {
-    Column(
-        Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-    ) {
-        Text(
-            text = slideContent.title,
-            style = MaterialTheme.typography.headlineLarge
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-        Text(
-            text = slideContent.description ?: "",
-            style = MaterialTheme.typography.bodyMedium
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(
-            text = slideContent.pageNr.toString(),
-            style = MaterialTheme.typography.bodySmall
-        )
-
-    }
-}
-
-@Composable
-fun AboutMeSlide(
+fun TitleSlide(
     slideContent: SlideContent,
 ) {
     Column(
         Modifier
             .fillMaxSize()
             .padding(0.dp)
-            .background(Color.White)
+            .background(lightBlue)
     ) {
         Row(
             Modifier
                 .fillMaxWidth()
                 .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp),
+
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
                 text = slideContent.title,
                 style = typography.headlineLarge,
-                color = darkPink
+                color = darkBlue
             )
-
         }
+
         Row(
             Modifier
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start
         ) {
             Image(
                 painter = painterResource(id = slideContent.image),
                 contentDescription = slideContent.imageDescription,
-                modifier = Modifier.size(400.dp)
+                modifier = Modifier
+                    .size(400.dp)
+
+            )
+        }
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.subtitle ?: "",
+                style = typography.headlineMedium,
+                color = darkPink
             )
         }
         Row(
             Modifier
-                .padding(16.dp),
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Column {
-                Text(
-                    text = slideContent.description ?: "",
-                    style = typography.bodyMedium
-                )
-                Text(
-                    text = slideContent.pageNr.toString(),
-                    style = MaterialTheme.typography.bodySmall
-                )
-            }
-
+            Text(
+                text = slideContent.description ?: "",
+                style = typography.bodySmall
+            )
         }
-
 
     }
 }
 
 @Preview
 @Composable
-fun PreviewAboutMeSlide() {
+fun TitleSlidePreview() {
     Smud2024Theme {
-        AboutMeSlide(
-            slideContent = SlideContent(
-                title = "About Me",
-                description = "RAT",
-                image = R.drawable.rat_smud,
-                imageDescription = "Picture of the author of this presentation",
-                pageNr = 1
-            )
+        TitleSlide(slideContent = SlideContent(
+            title = "SMUD 2024",
+            subtitle = "The future of SMUD",
+            description = "SMUD 2024 is a project that aims to create a new SMUD app for the year 2024",
+            imageDescription = "Some description",
+            image = R.drawable.smud_logo_man,
+            pageNr = 0
+        )
         )
     }
 }

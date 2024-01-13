@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.Slide
 import pa.tello.rafael.smud2024.data.SlideContent
-import pa.tello.rafael.smud2024.presentation.ui.AboutSlide
+import pa.tello.rafael.smud2024.presentation.ui.AboutMeSlide
 import pa.tello.rafael.smud2024.presentation.ui.ContentSlide
 import pa.tello.rafael.smud2024.presentation.ui.TitleSlide
 
@@ -42,7 +42,7 @@ object PresentationContent {
             ),
             Slide(
                 slide = {
-                    AboutSlide(
+                    AboutMeSlide(
                         slideContent = SlideContent(
                             title = "Om meg",
                             description = "RAT",
