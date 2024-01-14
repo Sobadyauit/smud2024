@@ -23,7 +23,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.SlideContent
-import pa.tello.rafael.smud2024.presentation.ui.theme.SetStatusBarColor
 import pa.tello.rafael.smud2024.presentation.ui.theme.Smud2024Theme
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
@@ -35,7 +34,6 @@ fun CitationSlide(
     slideContent: SlideContent,
 ) {
     val backgroundColor = lightPink
-    SetStatusBarColor(color = backgroundColor)
     Column(
         Modifier
             .fillMaxSize()

@@ -20,7 +20,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.SlideContent
-import pa.tello.rafael.smud2024.presentation.ui.theme.SetStatusBarColor
 import pa.tello.rafael.smud2024.presentation.ui.theme.Smud2024Theme
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.lightBlue
@@ -31,7 +30,6 @@ fun AboutSlide(
     slideContent: SlideContent
 ) {
     val backgroundColor = lightBlue
-    SetStatusBarColor(color = backgroundColor)
     Column(
         Modifier
             .fillMaxSize()
