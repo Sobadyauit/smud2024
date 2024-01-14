@@ -14,22 +14,21 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
-
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import pa.tello.rafael.smud2024.data.content.PresentationContent
-import pa.tello.rafael.smud2024.presentation.viewmodel.PresentationViewModel
+import pa.tello.rafael.smud2024.presentation.ui.theme.Smud2024Theme
+import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
+import pa.tello.rafael.smud2024.presentation.ui.theme.lightPink
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PresentationScreen() {
-    val viewModel = PresentationViewModel()
     Box(modifier = Modifier.fillMaxSize()) {
         val slides = PresentationContent.getSlides()
         val pagerState = rememberPagerState(pageCount = { slides.size })

@@ -6,7 +6,8 @@ import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.Slide
 import pa.tello.rafael.smud2024.data.SlideContent
 import pa.tello.rafael.smud2024.presentation.ui.AboutMeSlide
-import pa.tello.rafael.smud2024.presentation.ui.ContentSlide
+import pa.tello.rafael.smud2024.presentation.ui.AboutSlide
+import pa.tello.rafael.smud2024.presentation.ui.CitationSlide
 import pa.tello.rafael.smud2024.presentation.ui.TitleSlide
 
 object PresentationContent {
@@ -29,12 +30,12 @@ object PresentationContent {
             ),
             Slide(
                 slide = {
-                    ContentSlide(
+                    CitationSlide(
                         slideContent = SlideContent(
                             title = "Hvordan lærer vi?",
                             description = "Vi lærer ved å gjøre",
-                            image = R.drawable.luther_lol,
-                            imageDescription = "A dog laughing",
+                            image = R.drawable.smud_logo_liten,
+                            imageDescription = "smud logo",
                             pageNr = 1
                         )
                     )
@@ -47,6 +48,19 @@ object PresentationContent {
                             title = "Om meg",
                             description = "RAT",
                             image = R.drawable.rat_smud,
+                            imageDescription = "Picture of the author of this presentation",
+                            pageNr = 1
+                        )
+                    )
+                }
+            ),
+            Slide(
+                slide = {
+                    AboutSlide(
+                        slideContent = SlideContent(
+                            title = "Om meg",
+                            description = "RAT",
+                            image = R.drawable.smud_logo_liten,
                             imageDescription = "Picture of the author of this presentation",
                             pageNr = 1
                         )

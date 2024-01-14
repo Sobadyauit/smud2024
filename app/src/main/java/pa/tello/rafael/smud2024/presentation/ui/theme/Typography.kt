@@ -1,4 +1,4 @@
-package pa.tello.rafael.smud2024.presentation.ui
+package pa.tello.rafael.smud2024.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -13,6 +13,10 @@ val typography = Typography(
     headlineMedium = TextStyle(
         fontSize = 32.sp,
         fontWeight = FontWeight.Bold
+    ),
+    bodyLarge = TextStyle(
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Normal
     ),
     bodyMedium = TextStyle(
         fontSize = 20.sp,

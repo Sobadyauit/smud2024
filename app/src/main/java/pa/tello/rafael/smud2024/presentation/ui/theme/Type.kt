@@ -1,4 +1,4 @@
-package pa.tello.rafael.smud2024.presentation.ui
+package pa.tello.rafael.smud2024.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
