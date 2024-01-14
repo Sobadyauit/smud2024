@@ -58,10 +58,10 @@ object PresentationContent {
                 slide = {
                     AboutSlide(
                         slideContent = SlideContent(
-                            title = "Om meg",
-                            description = "RAT",
+                            title = "Om Prosjektet og SMUD 2024",
+                            description = "Dette prosjektet finnes på github",
                             image = R.drawable.smud_logo_liten,
-                            imageDescription = "Picture of the author of this presentation",
+                            imageDescription = "smud logo",
                             pageNr = 1
                         )
                     )

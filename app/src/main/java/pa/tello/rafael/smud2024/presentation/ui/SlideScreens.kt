@@ -24,6 +24,7 @@ import pa.tello.rafael.smud2024.data.SlideContent
 import pa.tello.rafael.smud2024.presentation.ui.theme.Smud2024Theme
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.typography
+import pa.tello.rafael.smud2024.presentation.ui.theme.veryLightGray
 
 
 @Composable
@@ -60,7 +61,7 @@ fun ContentSlide(
 fun AboutMeSlide(
     slideContent: SlideContent
 ) {
-    val backgroundColor = Color.White
+    val backgroundColor = veryLightGray
     Column(
         Modifier
             .fillMaxSize()
