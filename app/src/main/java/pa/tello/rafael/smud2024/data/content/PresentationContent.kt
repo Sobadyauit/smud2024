@@ -18,9 +18,9 @@ object PresentationContent {
                 slide = {
                     TitleSlide(
                         slideContent = SlideContent(
-                            title = "SMUD 2024",
-                            subtitle = "The future of SMUD",
-                            description = "SMUD 2024 is a project that aims to create a new SMUD app for the year 2024",
+                            title = "Smud 2024",
+                            subtitle = "The future of Smud",
+                            description = "Smud Tech 2024 is a project that aims to create a new SMUD app for the year 2024",
                             image = R.drawable.smud_logo_man,
                             imageDescription = "man raising a hand with the SMUD logo",
                             pageNr = 0
