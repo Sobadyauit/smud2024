@@ -20,6 +20,7 @@ data class SlideState(
     val backgroundColor: Color,
     val titleColor: Color = darkBlue,
     val titleFormat: TextStyle = typography.headlineLarge,
+    val titleFormatCollapsed: TextStyle = typography.headlineMedium,
     val subtitleColor: Color = darkBlue,
     val descriptionColor: Color = darkBlue
 )

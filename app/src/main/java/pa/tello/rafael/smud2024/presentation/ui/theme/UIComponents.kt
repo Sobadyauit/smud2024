@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -22,7 +23,12 @@ import pa.tello.rafael.smud2024.data.SlideState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarScrollBehavior) {
+fun TopBar(
+    state: SlideState,
+    content: SlideContent,
+    scrollBehavior: TopAppBarScrollBehavior,
+    isCollapsed: State<Boolean>
+    ) {
     LargeTopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = state.backgroundColor,
@@ -39,7 +45,7 @@ fun TopBar(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarSc
                     .wrapContentWidth(Alignment.Start)) {
                     Text(
                         text = content.title,
-                        style = state.titleFormat
+                        style = if (isCollapsed.value) state.titleFormatCollapsed  else state.titleFormat
                     )
                 }
             }
@@ -50,7 +56,12 @@ fun TopBar(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarSc
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBarWithIcon(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarScrollBehavior) {
+fun TopBarWithIcon(
+    state: SlideState,
+    content: SlideContent,
+    scrollBehavior: TopAppBarScrollBehavior,
+    isCollapsed: State<Boolean>
+) {
     LargeTopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = state.backgroundColor,
@@ -69,7 +80,7 @@ fun TopBarWithIcon(state: SlideState, content: SlideContent, scrollBehavior: Top
                 ) {
                     Text(
                         text = content.title,
-                        style = state.titleFormat
+                        style = if (isCollapsed.value) state.titleFormatCollapsed  else state.titleFormat
                     )
                 }
                 Image(

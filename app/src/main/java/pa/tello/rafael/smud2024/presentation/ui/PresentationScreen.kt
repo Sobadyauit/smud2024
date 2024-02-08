@@ -22,6 +22,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -46,25 +47,25 @@ fun PresentationScreen() {
     val pagerState = rememberPagerState(pageCount = { slides.size })
     var slideState by remember { mutableStateOf(getTitleState()) }
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(rememberTopAppBarState())
+    val isCollapsed = remember { derivedStateOf { scrollBehavior.state.collapsedFraction > 0.5 } }
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             if (slides[pagerState.currentPage].content.topBarImage != null) {
-                TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content, scrollBehavior)
+                TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content, scrollBehavior, isCollapsed)
             } else {
-                TopBar(state = slideState, content = slides[pagerState.currentPage].content, scrollBehavior)
+                TopBar(state = slideState, content = slides[pagerState.currentPage].content, scrollBehavior, isCollapsed)
             }
         },
         bottomBar = {
             BottomAppBar(
                 containerColor = slideState.backgroundColor,
-                //modifier = Modifier.height(32.dp)
+                modifier = Modifier.height(75.dp)
             ) {
                 Row(
                     Modifier
                         .wrapContentHeight()
                         .fillMaxWidth()
-                        .height(32.dp)
                         .align(Alignment.CenterVertically)
                         .padding(bottom = 8.dp),
                 horizontalArrangement = Arrangement.Center
@@ -92,9 +93,6 @@ fun PresentationScreen() {
                     .padding(
                         top = with(LocalDensity.current) { contentPadding.calculateTopPadding() }
                     )
-                //    .verticalScroll(rememberScrollState())
-                //    .background(color = slideState.backgroundColor)
-                //    .fillMaxHeight()
             ){
                 item {
                     Column {
