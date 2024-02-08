@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -27,7 +26,6 @@ import androidx.compose.ui.unit.dp
 import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.SlideContent
 import pa.tello.rafael.smud2024.presentation.ui.theme.Smud2024Theme
-import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.lightBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.lightPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.typography
@@ -76,24 +74,11 @@ fun AboutMeSlide(
     ) {
         Row(
             Modifier
-                .fillMaxWidth()
-                .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Text(
-                text = slideContent.title,
-                style = typography.headlineLarge,
-                color = darkPink
-            )
-
-        }
-        Row(
-            Modifier
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Image(
-                painter = painterResource(id = slideContent.image),
+                painter = painterResource(id = slideContent.image ?: R.drawable.smud_logo_liten),
                 contentDescription = slideContent.imageDescription,
                 colorFilter = ColorFilter.colorMatrix(ColorMatrix().apply { setToSaturation(0f) }),
                 modifier = Modifier

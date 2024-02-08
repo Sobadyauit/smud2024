@@ -10,13 +10,13 @@ import pa.tello.rafael.smud2024.R
 
 val typography = Typography(
     headlineLarge = TextStyle(
-        fontSize = 50.sp,
+        fontSize = 40.sp,
         fontWeight = FontWeight.Bold,
         fontFamily = FontFamily(Font(R.font.sparebank1_regular))
 
     ),
     headlineMedium = TextStyle(
-        fontSize = 32.sp,
+        fontSize = 22.sp,
         fontWeight = FontWeight.Bold,
         fontFamily = FontFamily(Font(R.font.sparebank1_medium))
     ),

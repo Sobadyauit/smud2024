@@ -21,15 +21,15 @@ import androidx.compose.ui.unit.dp
 import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.SlideContent
 import pa.tello.rafael.smud2024.presentation.ui.theme.Smud2024Theme
-import pa.tello.rafael.smud2024.presentation.ui.theme.darkBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.lightBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.typography
 
 @Composable
 fun TitleSlide(
-    slideContent: SlideContent,
+    slideContent: SlideContent
 ) {
+    val title = slideContent.title
     Column(
         Modifier
             .fillMaxSize()
@@ -38,26 +38,12 @@ fun TitleSlide(
     ) {
         Row(
             Modifier
-                .fillMaxWidth()
-                .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp),
-
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Text(
-                text = slideContent.title,
-                style = typography.headlineLarge,
-                color = darkBlue
-            )
-        }
-
-        Row(
-            Modifier
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start
         ) {
             Image(
-                painter = painterResource(id = slideContent.image),
+                painter = painterResource(id = slideContent.image ?: R.drawable.smud_logo_liten),
                 contentDescription = slideContent.imageDescription,
                 modifier = Modifier
                     .size(400.dp)

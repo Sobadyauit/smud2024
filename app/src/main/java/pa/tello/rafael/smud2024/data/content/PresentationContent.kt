@@ -2,9 +2,7 @@ package pa.tello.rafael.smud2024.data.content
 
 
 import androidx.compose.runtime.Composable
-import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.Slide
-import pa.tello.rafael.smud2024.data.SlideContent
 import pa.tello.rafael.smud2024.presentation.ui.AboutMeSlide
 import pa.tello.rafael.smud2024.presentation.ui.AboutSlide
 import pa.tello.rafael.smud2024.presentation.ui.CitationSlide
@@ -15,55 +13,38 @@ object PresentationContent {
     fun getSlides(): List<Slide> {
         return listOf(
             Slide(
+                state = getTitleState(),
+                content = getTitleContent(),
                 slide = {
                     TitleSlide(
-                        slideContent = SlideContent(
-                            title = "Smud 2024",
-                            subtitle = "The future of Smud",
-                            description = "Smud Tech 2024 is a project that aims to create a new SMUD app for the year 2024",
-                            image = R.drawable.smud_logo_man,
-                            imageDescription = "man raising a hand with the SMUD logo",
-                            pageNr = 0
-                        )
+                        slideContent = getTitleContent()
                     )
                 }
             ),
             Slide(
+                state = getCitationState(),
+                content = getCitationContent(),
                 slide = {
                     CitationSlide(
-                        slideContent = SlideContent(
-                            title = "Hvordan lærer vi?",
-                            description = "Vi lærer ved å gjøre",
-                            image = R.drawable.smud_logo_liten,
-                            imageDescription = "smud logo",
-                            pageNr = 1
-                        )
+                        slideContent = getCitationContent()
                     )
                 }
             ),
             Slide(
+                state = getAboutMeState(),
+                content = getAboutMeContent(),
                 slide = {
                     AboutMeSlide(
-                        slideContent = SlideContent(
-                            title = "Om meg",
-                            description = "RAT",
-                            image = R.drawable.rat_smud,
-                            imageDescription = "Picture of the author of this presentation",
-                            pageNr = 1
-                        )
+                        slideContent = getAboutMeContent()
                     )
                 }
             ),
             Slide(
+                state = getAboutAppState(),
+                content = getAboutAppContent(),
                 slide = {
                     AboutSlide(
-                        slideContent = SlideContent(
-                            title = "Om Prosjektet og SMUD 2024",
-                            description = "Dette prosjektet finnes på github",
-                            image = R.drawable.smud_logo_liten,
-                            imageDescription = "smud logo",
-                            pageNr = 1
-                        )
+                        slideContent = getAboutAppContent()
                     )
                 }
             )
