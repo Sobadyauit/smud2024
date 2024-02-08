@@ -6,17 +6,21 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -25,6 +29,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import pa.tello.rafael.smud2024.data.content.PresentationContent
@@ -34,29 +39,32 @@ import pa.tello.rafael.smud2024.presentation.ui.theme.TopBarWithIcon
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.lightPink
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun PresentationScreen() {
     val slides = PresentationContent.getSlides()
     val pagerState = rememberPagerState(pageCount = { slides.size })
     var slideState by remember { mutableStateOf(getTitleState()) }
+    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(rememberTopAppBarState())
     Scaffold(
+        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             if (slides[pagerState.currentPage].content.topBarImage != null) {
-                TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content)
+                TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content, scrollBehavior)
             } else {
-                TopBar(state = slideState, content = slides[pagerState.currentPage].content)
+                TopBar(state = slideState, content = slides[pagerState.currentPage].content, scrollBehavior)
             }
         },
         bottomBar = {
             BottomAppBar(
                 containerColor = slideState.backgroundColor,
-                modifier = Modifier.height(32.dp)
+                //modifier = Modifier.height(32.dp)
             ) {
                 Row(
                     Modifier
                         .wrapContentHeight()
                         .fillMaxWidth()
+                        .height(32.dp)
                         .align(Alignment.CenterVertically)
                         .padding(bottom = 8.dp),
                 horizontalArrangement = Arrangement.Center
@@ -77,29 +85,37 @@ fun PresentationScreen() {
             }
         },
         content = { contentPadding ->
-            Column(
-                Modifier
+            val listState = rememberLazyListState()
+            LazyColumn (
+                state = listState,
+                modifier = Modifier
                     .padding(
                         top = with(LocalDensity.current) { contentPadding.calculateTopPadding() }
                     )
-            ) {
-
-
-            Box{
-
-                HorizontalPager(state = pagerState) { page ->
+                //    .verticalScroll(rememberScrollState())
+                //    .background(color = slideState.backgroundColor)
+                //    .fillMaxHeight()
+            ){
+                item {
                     Column {
-                        slides[page].let { slide ->
-                            slide.slide()
+                        HorizontalPager(state = pagerState) { page ->
+                            Column {
+                                slides[page].let { slide ->
+                                    slide.slide()
+                                }
+                            }
                         }
+
                     }
                 }
 
 
+                
+                
+
+
             }
 
-        }
-            Spacer(modifier = Modifier.height(32.dp))
         }
 
     )

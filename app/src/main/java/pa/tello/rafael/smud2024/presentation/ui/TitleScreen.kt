@@ -29,7 +29,6 @@ import pa.tello.rafael.smud2024.presentation.ui.theme.typography
 fun TitleSlide(
     slideContent: SlideContent
 ) {
-    val title = slideContent.title
     Column(
         Modifier
             .fillMaxSize()
@@ -74,6 +73,153 @@ fun TitleSlide(
                 style = typography.bodySmall
             )
         }
+
+        // Dette maa fjernes
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.subtitle ?: "",
+                style = typography.headlineMedium,
+                color = darkPink
+            )
+        }
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = typography.bodySmall
+            )
+        }
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.subtitle ?: "",
+                style = typography.headlineMedium,
+                color = darkPink
+            )
+        }
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = typography.bodySmall
+            )
+        }
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.subtitle ?: "",
+                style = typography.headlineMedium,
+                color = darkPink
+            )
+        }
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = typography.bodySmall
+            )
+        }
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.subtitle ?: "",
+                style = typography.headlineMedium,
+                color = darkPink
+            )
+        }
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = typography.bodySmall
+            )
+        }
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.subtitle ?: "",
+                style = typography.headlineMedium,
+                color = darkPink
+            )
+        }
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = typography.bodySmall
+            )
+        }
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.subtitle ?: "",
+                style = typography.headlineMedium,
+                color = darkPink
+            )
+        }
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 1.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = typography.bodySmall
+            )
+        }
+        // Maa fjernes
 
     }
 }

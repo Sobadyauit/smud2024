@@ -45,6 +45,78 @@ fun CitationSlide(
                 modifier = Modifier.padding(20.dp)
             )
         }
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
+                .background(color = darkPink, RoundedCornerShape(8.dp))
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = MaterialTheme.typography.headlineSmall,
+                modifier = Modifier.padding(20.dp)
+            )
+        }
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
+                .background(color = darkPink, RoundedCornerShape(8.dp))
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = MaterialTheme.typography.headlineSmall,
+                modifier = Modifier.padding(20.dp)
+            )
+        }
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
+                .background(color = darkPink, RoundedCornerShape(8.dp))
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = MaterialTheme.typography.headlineSmall,
+                modifier = Modifier.padding(20.dp)
+            )
+        }
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
+                .background(color = darkPink, RoundedCornerShape(8.dp))
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = MaterialTheme.typography.headlineSmall,
+                modifier = Modifier.padding(20.dp)
+            )
+        }
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
+                .background(color = darkPink, RoundedCornerShape(8.dp))
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = MaterialTheme.typography.headlineSmall,
+                modifier = Modifier.padding(20.dp)
+            )
+        }
+        Box(
+            Modifier
+                .fillMaxWidth()
+                .padding(top = 48.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
+                .background(color = darkPink, RoundedCornerShape(8.dp))
+        ) {
+            Text(
+                text = slideContent.description ?: "",
+                style = MaterialTheme.typography.headlineSmall,
+                modifier = Modifier.padding(20.dp)
+            )
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 

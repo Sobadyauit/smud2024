@@ -11,18 +11,18 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.SlideContent
 import pa.tello.rafael.smud2024.data.SlideState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(state: SlideState, content: SlideContent) {
+fun TopBar(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarScrollBehavior) {
     LargeTopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = state.backgroundColor,
@@ -43,13 +43,14 @@ fun TopBar(state: SlideState, content: SlideContent) {
                     )
                 }
             }
-        }
+        },
+        scrollBehavior = scrollBehavior
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBarWithIcon(state: SlideState, content: SlideContent) {
+fun TopBarWithIcon(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarScrollBehavior) {
     LargeTopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = state.backgroundColor,
@@ -72,14 +73,14 @@ fun TopBarWithIcon(state: SlideState, content: SlideContent) {
                     )
                 }
                 Image(
-                    painter = painterResource(id = R.drawable.smud_logo_liten),
-                    //painter = painterResource(id = content.topBarImage!!),
+                    painter = painterResource(id = content.topBarImage!!),
                     contentDescription = content.imageDescription,
                     modifier = Modifier
                         .size(80.dp)
                         .padding(start = 0.dp, top = 0.dp, end = 16.dp, bottom = 0.dp)
                 )
             }
-        }
+        },
+        scrollBehavior = scrollBehavior
     )
 }
