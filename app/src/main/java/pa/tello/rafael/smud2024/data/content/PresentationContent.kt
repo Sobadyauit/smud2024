@@ -5,8 +5,10 @@ import androidx.compose.runtime.Composable
 import pa.tello.rafael.smud2024.data.Slide
 import pa.tello.rafael.smud2024.presentation.ui.AboutMeSlide
 import pa.tello.rafael.smud2024.presentation.ui.AboutSlide
-import pa.tello.rafael.smud2024.presentation.ui.CitationSlide
+import pa.tello.rafael.smud2024.presentation.ui.SingleSlideNoPicture
+import pa.tello.rafael.smud2024.presentation.ui.SingleSlideWithPicture
 import pa.tello.rafael.smud2024.presentation.ui.TitleSlide
+import pa.tello.rafael.smud2024.presentation.ui.VerticalPagerScreen
 
 object PresentationContent {
     @Composable
@@ -22,11 +24,30 @@ object PresentationContent {
                 }
             ),
             Slide(
-                state = getCitationState(),
-                content = getCitationContent(),
+                state = getLearningNewState(),
+                content = getLearningNewContent(),
                 slide = {
-                    CitationSlide(
-                        slideContent = getCitationContent()
+                    SingleSlideWithPicture(
+                        slideContent = getLearningNewContent()
+                    )
+                }
+            ),
+            Slide(
+                state = getStartLineState(),
+                content = getStartLineContent(),
+                slide = {
+                    VerticalPagerScreen(
+                        slideContent = getStartLineContent(),
+                        slideState = getStartLineState()
+                    )
+                }
+            ),
+            Slide(
+                state = getNoFreeLunchState(),
+                content = getNoFreeLunchContent(),
+                slide = {
+                    SingleSlideNoPicture(
+                        slideContent = getNoFreeLunchContent()
                     )
                 }
             ),

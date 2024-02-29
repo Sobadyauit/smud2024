@@ -16,8 +16,23 @@ fun getTitleState(): SlideState = SlideState(
     descriptionColor = Color.White
 )
 
-fun getCitationState(): SlideState = SlideState(
+fun getLearningNewState(): SlideState = SlideState(
     backgroundColor = lightPink,
+    titleColor = darkBlue,
+    titleFormat = typography.headlineMedium,
+    subtitleColor = darkPink,
+    descriptionColor = Color.White
+)
+
+fun getStartLineState(): SlideState = SlideState(
+    backgroundColor = Color.White,
+    titleColor = darkBlue,
+    subtitleColor = darkBlue,
+    descriptionColor = Color.Black
+)
+
+fun getNoFreeLunchState(): SlideState = SlideState(
+    backgroundColor = lightBlue,
     titleColor = darkBlue,
     titleFormat = typography.headlineMedium,
     subtitleColor = darkPink,

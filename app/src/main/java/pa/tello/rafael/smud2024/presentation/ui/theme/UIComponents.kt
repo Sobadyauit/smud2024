@@ -11,7 +11,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,7 +21,10 @@ import pa.tello.rafael.smud2024.data.SlideState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarScrollBehavior) {
+fun TopBar(
+    state: SlideState,
+    content: SlideContent
+    ) {
     LargeTopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = state.backgroundColor,
@@ -43,14 +45,16 @@ fun TopBar(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarSc
                     )
                 }
             }
-        },
-        scrollBehavior = scrollBehavior
+        }
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBarWithIcon(state: SlideState, content: SlideContent, scrollBehavior: TopAppBarScrollBehavior) {
+fun TopBarWithIcon(
+    state: SlideState,
+    content: SlideContent,
+) {
     LargeTopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = state.backgroundColor,
@@ -81,6 +85,5 @@ fun TopBarWithIcon(state: SlideState, content: SlideContent, scrollBehavior: Top
                 )
             }
         },
-        scrollBehavior = scrollBehavior
     )
 }
