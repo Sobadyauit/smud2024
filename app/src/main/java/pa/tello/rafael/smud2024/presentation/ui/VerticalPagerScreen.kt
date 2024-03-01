@@ -3,6 +3,7 @@ package pa.tello.rafael.smud2024.presentation.ui
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.pager.VerticalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
@@ -44,9 +44,9 @@ fun VerticalPagerScreen(
             state = pagerState,
             Modifier.background(color = backgroundColor)
         ) { page ->
-            Card(
+            Box(
                 Modifier
-                    .size(400.dp)
+                    .size(600.dp)
                     .graphicsLayer {
                         // Calculate the absolute offset for the current page from the
                         // scroll position. We use the absolute value which allows us to mirror
@@ -58,13 +58,33 @@ fun VerticalPagerScreen(
 
                         // We animate the alpha, between 50% and 100%
                         alpha = lerp(
-                            start = 0.5f,
+                            start = 0.0f,
                             stop = 1f,
-                            fraction = 1f - pageOffset.coerceIn(0f, 1f)
+                            fraction = 1f - 2 * pageOffset.coerceIn(0f, 0.5f)
                         )
                     }
                     .background(color = backgroundColor)
             ) {
+                //Column {
+                //    Text(text = "Absolute value: ${((pagerState.currentPage - page) + pagerState
+                //        .currentPageOffsetFraction).absoluteValue}",
+                //        style = Typography.headlineLarge,
+                //        modifier = Modifier
+                //            .padding(16.dp)
+                //    )
+                //    Text(text = "Current Page: ${pagerState.currentPage}",
+                //        style = Typography.headlineLarge,
+                //        modifier = Modifier
+                //            .padding(16.dp)
+                //    )
+                //    Text(text = "Absolute value: ${((pagerState.currentPage - page) + pagerState
+                //        .currentPageOffsetFraction).absoluteValue}",
+                //        style = Typography.headlineLarge,
+                //        modifier = Modifier
+                //            .padding(16.dp)
+                //    )
+                //}
+
                 Image(
                     painter = painterResource(id = slideContent.images[page]),
                     contentDescription = "Pager",

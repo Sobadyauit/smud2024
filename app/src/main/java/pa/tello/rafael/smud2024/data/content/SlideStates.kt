@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 import pa.tello.rafael.smud2024.data.SlideState
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
+import pa.tello.rafael.smud2024.presentation.ui.theme.lightBeige
 import pa.tello.rafael.smud2024.presentation.ui.theme.lightBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.lightPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.typography
@@ -25,7 +26,7 @@ fun getLearningNewState(): SlideState = SlideState(
 )
 
 fun getStartLineState(): SlideState = SlideState(
-    backgroundColor = Color.White,
+    backgroundColor = lightBeige,
     titleColor = darkBlue,
     subtitleColor = darkBlue,
     descriptionColor = Color.Black
