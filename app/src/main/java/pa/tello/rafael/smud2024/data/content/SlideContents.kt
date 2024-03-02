@@ -27,8 +27,8 @@ internal fun getStartLineContent() = SlideContentPager(
     description = "Hvordan starter vi?",
     image = R.drawable.renovation,
     images = mutableListOf(
-        R.drawable.star_rocket,
-        R.drawable.boring_dispair,
+        R.drawable.st1_startline,
+        R.drawable.st2_startline,
     ),
     imageDescription = "Picture of a start line",
     pageNr = 1
@@ -43,9 +43,10 @@ internal fun getNoFreeLunchContent() = SlideContent(
 )
 
 internal fun getMentiContent() = SlideContent(
-    title = "Menti",
+    title = "",
     subtitle = "Mentimeter.com",
-    description = "Bruk koden 123456",
+    description = "https://www.mentimeter.com",
+    topBarImage = R.drawable.smud_logo_liten,
     imageDescription = "Menti logo",
     pageNr = 1
 )

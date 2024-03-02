@@ -65,32 +65,13 @@ fun VerticalPagerScreen(
                     }
                     .background(color = backgroundColor)
             ) {
-                //Column {
-                //    Text(text = "Absolute value: ${((pagerState.currentPage - page) + pagerState
-                //        .currentPageOffsetFraction).absoluteValue}",
-                //        style = Typography.headlineLarge,
-                //        modifier = Modifier
-                //            .padding(16.dp)
-                //    )
-                //    Text(text = "Current Page: ${pagerState.currentPage}",
-                //        style = Typography.headlineLarge,
-                //        modifier = Modifier
-                //            .padding(16.dp)
-                //    )
-                //    Text(text = "Absolute value: ${((pagerState.currentPage - page) + pagerState
-                //        .currentPageOffsetFraction).absoluteValue}",
-                //        style = Typography.headlineLarge,
-                //        modifier = Modifier
-                //            .padding(16.dp)
-                //    )
-                //}
 
                 Image(
                     painter = painterResource(id = slideContent.images[page]),
                     contentDescription = "Pager",
                     modifier = Modifier
                         .size(360.dp)
-                        //.padding(all = 16.dp)
+                        .padding(all = 8.dp)
                         .background(color = backgroundColor)
                 )
             }

@@ -3,7 +3,6 @@ package pa.tello.rafael.smud2024.data.content
 
 import androidx.compose.runtime.Composable
 import pa.tello.rafael.smud2024.data.Slide
-import pa.tello.rafael.smud2024.presentation.ui.AboutMeSlide
 import pa.tello.rafael.smud2024.presentation.ui.SingleSlideNoPicture
 import pa.tello.rafael.smud2024.presentation.ui.SingleSlideWithPicture
 import pa.tello.rafael.smud2024.presentation.ui.TitleSlide
@@ -47,15 +46,6 @@ object PresentationContent {
                 slide = {
                     SingleSlideNoPicture(
                         slideContent = getNoFreeLunchContent()
-                    )
-                }
-            ),
-            Slide(
-                state = getMentiState(),
-                content = getMentiContent(),
-                slide = {
-                    AboutMeSlide(
-                        slideContent = getMentiContent()
                     )
                 }
             ),
