@@ -40,17 +40,45 @@ fun getNoFreeLunchState(): SlideState = SlideState(
     descriptionColor = Color.White
 )
 
-fun getAboutMeState(): SlideState = SlideState(
+fun getMentiState(): SlideState = SlideState(
     backgroundColor = lightBlue,
-    titleColor = darkPink,
-    subtitleColor = darkBlue,
+    titleColor = darkBlue,
+    titleFormat = typography.headlineMedium,
+    subtitleColor = darkPink,
     descriptionColor = Color.White
 )
 
-fun getAboutAppState(): SlideState = SlideState(
-    backgroundColor = lightBlue,
-    titleColor = darkPink,
+fun getExcusesState(): SlideState = SlideState(
+    backgroundColor = lightBeige,
+    titleColor = darkBlue,
     titleFormat = typography.headlineMedium,
-    subtitleColor = darkBlue,
+    subtitleColor = darkPink,
     descriptionColor = Color.White
 )
+
+fun getIHaveLearnedState(): SlideState = SlideState(
+    backgroundColor = lightBlue,
+    titleColor = darkBlue,
+    titleFormat = typography.headlineMedium,
+    subtitleColor = darkPink,
+    descriptionColor = Color.White
+)
+
+fun getSuggestionState(): SlideState = SlideState(
+    backgroundColor = lightBlue,
+    titleColor = darkBlue,
+    titleFormat = typography.headlineMedium,
+    subtitleColor = darkPink,
+    descriptionColor = Color.White
+)
+
+fun getFinishState(): SlideState = SlideState(
+    backgroundColor = darkPink,
+    titleColor = darkBlue,
+    titleFormat = typography.headlineMedium,
+    subtitleColor = darkPink,
+    descriptionColor = Color.White
+)
+
+
+

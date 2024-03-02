@@ -4,7 +4,6 @@ package pa.tello.rafael.smud2024.data.content
 import androidx.compose.runtime.Composable
 import pa.tello.rafael.smud2024.data.Slide
 import pa.tello.rafael.smud2024.presentation.ui.AboutMeSlide
-import pa.tello.rafael.smud2024.presentation.ui.AboutSlide
 import pa.tello.rafael.smud2024.presentation.ui.SingleSlideNoPicture
 import pa.tello.rafael.smud2024.presentation.ui.SingleSlideWithPicture
 import pa.tello.rafael.smud2024.presentation.ui.TitleSlide
@@ -52,20 +51,50 @@ object PresentationContent {
                 }
             ),
             Slide(
-                state = getAboutMeState(),
-                content = getAboutMeContent(),
+                state = getMentiState(),
+                content = getMentiContent(),
                 slide = {
                     AboutMeSlide(
-                        slideContent = getAboutMeContent()
+                        slideContent = getMentiContent()
                     )
                 }
             ),
             Slide(
-                state = getAboutAppState(),
-                content = getAboutAppContent(),
+                state = getExcusesState(),
+                content = getExcusesContent(),
                 slide = {
-                    AboutSlide(
-                        slideContent = getAboutAppContent()
+                    VerticalPagerScreen(
+                        slideContent = getExcusesContent(),
+                        slideState = getExcusesState()
+                    )
+                }
+            ),
+            Slide(
+                state = getIHaveLearnedState(),
+                content = getIHaveLearnedContent(),
+                slide = {
+                    SingleSlideNoPicture(
+                        slideContent = getIHaveLearnedContent()
+                    )
+                }
+            ),
+            Slide(
+                state = getSuggestionState(),
+                content = getSuggestionContent(),
+                slide = {
+                    VerticalPagerScreen(
+                        slideContent = getSuggestionContent(),
+                        slideState = getSuggestionState()
+                    )
+                }
+            ),
+            Slide(
+                state = getFinishState(),
+                content = getFinishContent(),
+                slide = {
+                    VerticalPagerScreen(
+                        slideContent = getFinishContent(),
+                        slideState = getFinishState()
                     )
                 }
             )
