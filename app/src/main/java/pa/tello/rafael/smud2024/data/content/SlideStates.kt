@@ -2,6 +2,7 @@ package pa.tello.rafael.smud2024.data.content
 
 import androidx.compose.ui.graphics.Color
 import pa.tello.rafael.smud2024.data.SlideState
+import pa.tello.rafael.smud2024.data.TopBarType
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.lightBeige
@@ -22,14 +23,16 @@ fun getLearningNewState(): SlideState = SlideState(
     titleColor = darkBlue,
     titleFormat = typography.headlineMedium,
     subtitleColor = darkPink,
-    descriptionColor = Color.White
+    descriptionColor = Color.White,
+    topBarType = TopBarType.LARGE_WITH_ICON
 )
 
 fun getStartLineState(): SlideState = SlideState(
     backgroundColor = lightBeige,
     titleColor = darkBlue,
     subtitleColor = darkBlue,
-    descriptionColor = Color.Black
+    descriptionColor = Color.Black,
+    topBarType = TopBarType.SMALL_NO_ICON
 )
 
 fun getNoFreeLunchState(): SlideState = SlideState(
@@ -53,7 +56,8 @@ fun getExcusesState(): SlideState = SlideState(
     titleColor = darkBlue,
     titleFormat = typography.headlineMedium,
     subtitleColor = darkPink,
-    descriptionColor = Color.White
+    descriptionColor = Color.White,
+    topBarType = TopBarType.SMALL_NO_ICON
 )
 
 fun getIHaveLearnedState(): SlideState = SlideState(
@@ -69,7 +73,8 @@ fun getSuggestionState(): SlideState = SlideState(
     titleColor = darkBlue,
     titleFormat = typography.headlineMedium,
     subtitleColor = darkPink,
-    descriptionColor = Color.White
+    descriptionColor = Color.White,
+    topBarType = TopBarType.SMALL_NO_ICON
 )
 
 fun getFinishState(): SlideState = SlideState(
@@ -77,7 +82,8 @@ fun getFinishState(): SlideState = SlideState(
     titleColor = darkBlue,
     titleFormat = typography.headlineMedium,
     subtitleColor = darkPink,
-    descriptionColor = Color.White
+    descriptionColor = Color.White,
+    topBarType = TopBarType.SMALL_NO_ICON
 )
 
 

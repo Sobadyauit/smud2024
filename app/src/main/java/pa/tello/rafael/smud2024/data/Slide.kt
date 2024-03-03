@@ -45,7 +45,8 @@ data class SlideState(
     val titleFormat: TextStyle = typography.headlineLarge,
     val titleFormatCollapsed: TextStyle = typography.headlineMedium,
     val subtitleColor: Color = darkBlue,
-    val descriptionColor: Color = darkBlue
+    val descriptionColor: Color = darkBlue,
+    val topBarType: TopBarType = TopBarType.LARGE_NO_ICON
 )
 
 data class Slide (
@@ -53,3 +54,9 @@ data class Slide (
     val content: SlideContent,
     val slide: @Composable (() -> Unit)
 )
+
+enum class TopBarType {
+    LARGE_NO_ICON,
+    LARGE_WITH_ICON,
+    SMALL_NO_ICON,
+}

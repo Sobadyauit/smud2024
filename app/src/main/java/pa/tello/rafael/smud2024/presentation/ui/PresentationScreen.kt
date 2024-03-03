@@ -25,8 +25,10 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import pa.tello.rafael.smud2024.R
+import pa.tello.rafael.smud2024.data.TopBarType
 import pa.tello.rafael.smud2024.data.content.PresentationContent
 import pa.tello.rafael.smud2024.data.content.getTitleState
+import pa.tello.rafael.smud2024.presentation.ui.theme.SmallerTopBar
 import pa.tello.rafael.smud2024.presentation.ui.theme.TopBar
 import pa.tello.rafael.smud2024.presentation.ui.theme.TopBarWithIcon
 
@@ -38,11 +40,22 @@ fun PresentationScreen() {
     var slideState by remember { mutableStateOf(getTitleState()) }
     Scaffold(
         topBar = {
-            if (slides[pagerState.currentPage].content.topBarImage != null) {
-                TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content)
-            } else {
-                TopBar(state = slideState, content = slides[pagerState.currentPage].content)
-            }
+                 when (slides[pagerState.currentPage].state.topBarType) {
+                     TopBarType.LARGE_WITH_ICON -> {
+                         TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content)
+                     }
+                     TopBarType.LARGE_NO_ICON -> {
+                         TopBar(state = slideState, content = slides[pagerState.currentPage].content)
+                     }
+                     TopBarType.SMALL_NO_ICON -> {
+                         SmallerTopBar(state = slideState)
+                     }
+                 }
+           //if (slides[pagerState.currentPage].content.topBarImage != null) {
+           //    TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content)
+           //} else {
+           //    TopBar(state = slideState, content = slides[pagerState.currentPage].content)
+           //}
         },
         bottomBar = {
             BottomAppBar(

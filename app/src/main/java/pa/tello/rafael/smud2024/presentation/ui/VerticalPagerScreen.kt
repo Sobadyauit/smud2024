@@ -60,20 +60,22 @@ fun VerticalPagerScreen(
                         alpha = lerp(
                             start = 0.0f,
                             stop = 1f,
-                            fraction = 1f - 2 * pageOffset.coerceIn(0f, 0.5f)
+                            fraction = 1f - 3 * pageOffset.coerceIn(0f, 0.33f)
                         )
                     }
                     .background(color = backgroundColor)
             ) {
-
-                Image(
-                    painter = painterResource(id = slideContent.images[page]),
-                    contentDescription = "Pager",
-                    modifier = Modifier
-                        .size(360.dp)
-                        .padding(all = 8.dp)
-                        .background(color = backgroundColor)
-                )
+                Column {
+                    Spacer(modifier = Modifier.height(96.dp))
+                    Image(
+                        painter = painterResource(id = slideContent.images[page]),
+                        contentDescription = "Pager",
+                        modifier = Modifier
+                            .size(360.dp)
+                            .padding(all = 8.dp)
+                            .background(color = backgroundColor)
+                    )
+                }
             }
         }
     }
