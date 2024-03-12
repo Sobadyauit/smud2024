@@ -14,6 +14,7 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -40,6 +41,7 @@ fun PresentationScreen() {
     var slideState by remember { mutableStateOf(getTitleState()) }
     Scaffold(
         topBar = {
+
                  when (slides[pagerState.currentPage].state.topBarType) {
                      TopBarType.LARGE_WITH_ICON -> {
                          TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content)
@@ -51,11 +53,7 @@ fun PresentationScreen() {
                          SmallerTopBar(state = slideState)
                      }
                  }
-           //if (slides[pagerState.currentPage].content.topBarImage != null) {
-           //    TopBarWithIcon(state = slideState, content = slides[pagerState.currentPage].content)
-           //} else {
-           //    TopBar(state = slideState, content = slides[pagerState.currentPage].content)
-           //}
+
         },
         bottomBar = {
             BottomAppBar(
