@@ -27,7 +27,7 @@ import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
 import pa.tello.rafael.smud2024.presentation.ui.theme.typography
 
 @Composable
-fun TitleSlide(
+fun TitleScreen(
     slideContent: SlideContent,
     slideState: SlideState
 ) {
@@ -82,7 +82,7 @@ fun TitleSlide(
 @Composable
 fun TitleSlidePreview() {
     Smud2024Theme {
-        TitleSlide(slideContent = SlideContent(
+        TitleScreen(slideContent = SlideContent(
             title = "SMUD 2024",
             subtitle = "The future of SMUD",
             description = "SMUD 2024 is a project that aims to create a new SMUD app for the year 2024",
