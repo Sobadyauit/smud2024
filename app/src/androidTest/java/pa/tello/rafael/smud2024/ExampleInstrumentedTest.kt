@@ -30,11 +30,13 @@ class ExampleInstrumentedTest {
         ActivityScenario.launch(MainActivity::class.java)
         composeTestRule.onNode(hasText(getTitleContent().title))
             .assertExists()
+        // Thread.sleep(2000)
         composeTestRule.onNode(hasText(getTitleContent().subtitle!!))
             .assertExists()
             .performTouchInput { swipeLeft() }
         composeTestRule.onNode(hasText(getLearningNewContent().title))
             .assertExists()
+        // Thread.sleep(2000)
     }
 
     @Test
@@ -47,5 +49,6 @@ class ExampleInstrumentedTest {
         }
         composeTestRule.onNode(hasText(getTitleContent().description!!))
             .assertExists()
+        // Thread.sleep(2000)
     }
 }
