@@ -3,10 +3,10 @@ package pa.tello.rafael.smud2024.data.content
 
 import androidx.compose.runtime.Composable
 import pa.tello.rafael.smud2024.data.Slide
-import pa.tello.rafael.smud2024.presentation.ui.AboutMeSlide
-import pa.tello.rafael.smud2024.presentation.ui.AboutSlide
-import pa.tello.rafael.smud2024.presentation.ui.CitationSlide
+import pa.tello.rafael.smud2024.presentation.ui.SingleSlideNoPicture
+import pa.tello.rafael.smud2024.presentation.ui.SingleSlideWithPicture
 import pa.tello.rafael.smud2024.presentation.ui.TitleSlide
+import pa.tello.rafael.smud2024.presentation.ui.VerticalPagerScreen
 
 object PresentationContent {
     @Composable
@@ -22,29 +22,69 @@ object PresentationContent {
                 }
             ),
             Slide(
-                state = getCitationState(),
-                content = getCitationContent(),
+                state = getLearningNewState(),
+                content = getLearningNewContent(),
                 slide = {
-                    CitationSlide(
-                        slideContent = getCitationContent()
+                    SingleSlideWithPicture(
+                        slideContent = getLearningNewContent()
                     )
                 }
             ),
             Slide(
-                state = getAboutMeState(),
-                content = getAboutMeContent(),
+                state = getStartLineState(),
+                content = getStartLineContent(),
                 slide = {
-                    AboutMeSlide(
-                        slideContent = getAboutMeContent()
+                    VerticalPagerScreen(
+                        slideContent = getStartLineContent(),
+                        slideState = getStartLineState()
                     )
                 }
             ),
             Slide(
-                state = getAboutAppState(),
-                content = getAboutAppContent(),
+                state = getNoFreeLunchState(),
+                content = getNoFreeLunchContent(),
                 slide = {
-                    AboutSlide(
-                        slideContent = getAboutAppContent()
+                    SingleSlideNoPicture(
+                        slideContent = getNoFreeLunchContent()
+                    )
+                }
+            ),
+            Slide(
+                state = getExcusesState(),
+                content = getExcusesContent(),
+                slide = {
+                    VerticalPagerScreen(
+                        slideContent = getExcusesContent(),
+                        slideState = getExcusesState()
+                    )
+                }
+            ),
+            Slide(
+                state = getIHaveLearnedState(),
+                content = getIHaveLearnedContent(),
+                slide = {
+                    SingleSlideNoPicture(
+                        slideContent = getIHaveLearnedContent()
+                    )
+                }
+            ),
+            Slide(
+                state = getSuggestionState(),
+                content = getSuggestionContent(),
+                slide = {
+                    VerticalPagerScreen(
+                        slideContent = getSuggestionContent(),
+                        slideState = getSuggestionState()
+                    )
+                }
+            ),
+            Slide(
+                state = getFinishState(),
+                content = getFinishContent(),
+                slide = {
+                    VerticalPagerScreen(
+                        slideContent = getFinishContent(),
+                        slideState = getFinishState()
                     )
                 }
             )

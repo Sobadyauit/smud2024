@@ -6,7 +6,7 @@ import androidx.compose.ui.text.TextStyle
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.typography
 
-data class SlideContent(
+open class SlideContent(
     val title: String,
     val subtitle: String? = null,
     val topBarImage: Int? = null,
@@ -16,13 +16,37 @@ data class SlideContent(
     val pageNr: Int
 )
 
+class SlideContentPager (
+    title: String,
+    subtitle: String? = null,
+    topBarImage: Int? = null,
+    description: String? = null,
+    image: Int? = null,
+    imageDescription: String,
+    images: MutableList<Int>,
+    pageNr: Int
+
+): SlideContent(
+    title = title,
+    subtitle = subtitle,
+    topBarImage = topBarImage,
+    description = description,
+    image = image,
+    imageDescription = imageDescription,
+    pageNr = pageNr
+) {
+    val images = images
+}
+
+
 data class SlideState(
     val backgroundColor: Color,
     val titleColor: Color = darkBlue,
     val titleFormat: TextStyle = typography.headlineLarge,
     val titleFormatCollapsed: TextStyle = typography.headlineMedium,
     val subtitleColor: Color = darkBlue,
-    val descriptionColor: Color = darkBlue
+    val descriptionColor: Color = darkBlue,
+    val topBarType: TopBarType = TopBarType.LARGE_NO_ICON
 )
 
 data class Slide (
@@ -30,3 +54,9 @@ data class Slide (
     val content: SlideContent,
     val slide: @Composable (() -> Unit)
 )
+
+enum class TopBarType {
+    LARGE_NO_ICON,
+    LARGE_WITH_ICON,
+    SMALL_NO_ICON,
+}
