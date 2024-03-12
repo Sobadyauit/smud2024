@@ -20,20 +20,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import pa.tello.rafael.smud2024.R
 import pa.tello.rafael.smud2024.data.SlideContent
+import pa.tello.rafael.smud2024.data.SlideState
+import pa.tello.rafael.smud2024.data.content.getTitleState
 import pa.tello.rafael.smud2024.presentation.ui.theme.Smud2024Theme
 import pa.tello.rafael.smud2024.presentation.ui.theme.darkPink
-import pa.tello.rafael.smud2024.presentation.ui.theme.lightBlue
 import pa.tello.rafael.smud2024.presentation.ui.theme.typography
 
 @Composable
 fun TitleSlide(
-    slideContent: SlideContent
+    slideContent: SlideContent,
+    slideState: SlideState
 ) {
     Column(
         Modifier
             .fillMaxSize()
             .padding(0.dp)
-            .background(lightBlue)
+            .background(slideState.backgroundColor)
     ) {
         Row(
             Modifier
@@ -73,154 +75,6 @@ fun TitleSlide(
                 style = typography.bodySmall
             )
         }
-
-        // Dette maa fjernes
-        Spacer(modifier = Modifier.height(4.dp))
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.subtitle ?: "",
-                style = typography.headlineMedium,
-                color = darkPink
-            )
-        }
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.description ?: "",
-                style = typography.bodySmall
-            )
-        }
-        Spacer(modifier = Modifier.height(4.dp))
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.subtitle ?: "",
-                style = typography.headlineMedium,
-                color = darkPink
-            )
-        }
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.description ?: "",
-                style = typography.bodySmall
-            )
-        }
-        Spacer(modifier = Modifier.height(4.dp))
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.subtitle ?: "",
-                style = typography.headlineMedium,
-                color = darkPink
-            )
-        }
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.description ?: "",
-                style = typography.bodySmall
-            )
-        }
-        Spacer(modifier = Modifier.height(4.dp))
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.subtitle ?: "",
-                style = typography.headlineMedium,
-                color = darkPink
-            )
-        }
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.description ?: "",
-                style = typography.bodySmall
-            )
-        }
-        Spacer(modifier = Modifier.height(4.dp))
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.subtitle ?: "",
-                style = typography.headlineMedium,
-                color = darkPink
-            )
-        }
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.description ?: "",
-                style = typography.bodySmall
-            )
-        }
-        Spacer(modifier = Modifier.height(4.dp))
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.subtitle ?: "",
-                style = typography.headlineMedium,
-                color = darkPink
-            )
-        }
-        Row(
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 1.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = slideContent.description ?: "",
-                style = typography.bodySmall
-            )
-        }
-        // Maa fjernes
-
     }
 }
 
@@ -235,7 +89,8 @@ fun TitleSlidePreview() {
             imageDescription = "Some description",
             image = R.drawable.smud_logo_man,
             pageNr = 0
-        )
+        ),
+            slideState = getTitleState()
         )
     }
 }

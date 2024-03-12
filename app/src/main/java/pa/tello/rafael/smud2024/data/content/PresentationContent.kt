@@ -17,7 +17,8 @@ object PresentationContent {
                 content = getTitleContent(),
                 slide = {
                     TitleSlide(
-                        slideContent = getTitleContent()
+                        slideContent = getTitleContent(),
+                        slideState = getTitleState()
                     )
                 }
             ),

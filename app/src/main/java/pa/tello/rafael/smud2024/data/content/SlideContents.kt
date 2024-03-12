@@ -6,7 +6,7 @@ import pa.tello.rafael.smud2024.data.SlideContentPager
 
 internal fun getTitleContent() = SlideContent(
     title = "Jeg vil bli gitarist",
-    subtitle = "Men det handler ikke om musikk",
+    subtitle = "Å lære fra å prøve nye ting",
     description = "",
     image = R.drawable.smud_logo_man,
     imageDescription = "man raising a hand with the SMUD logo",

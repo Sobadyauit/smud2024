@@ -13,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -43,7 +42,7 @@ fun TopBar(
                     .wrapContentWidth(Alignment.Start)) {
                     Text(
                         text = content.title,
-                        style = if (isCollapsed.value) state.titleFormatCollapsed  else state.titleFormat
+                        style = state.titleFormat
                     )
                 }
             }
@@ -75,7 +74,7 @@ fun TopBarWithIcon(
                 ) {
                     Text(
                         text = content.title,
-                        style = if (isCollapsed.value) state.titleFormatCollapsed  else state.titleFormat
+                        style = state.titleFormat
                     )
                 }
                 Image(
